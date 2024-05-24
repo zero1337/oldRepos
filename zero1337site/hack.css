@@ -1,0 +1,37 @@
+/*!
+ *  Hack v2.019 - https://sourcefoundry.org/hack/
+ *  Licenses - Fonts: Hack Open Font License + Bitstream Vera license, CSS: MIT License
+ */
+/* FONT PATHS
+ * -------------------------- */
+@font-face {
+  font-family: 'Hack';
+  src: url('hack-regular-latin-webfont.eot?v=2.019');
+  src: url('hack-regular-latin-webfont.eot?#iefix&v=2.019') format('embedded-opentype'), url('hack-regular-latin-webfont.woff2?v=2.019') format('woff2'), url('hack-regular-latin-webfont.woff?v=2.019') format('woff'), url('hack-regular-latin-webfont.ttf?v=2.019') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('hack-bold-latin-webfont.eot?v=2.019');
+  src: url('hack-bold-latin-webfont.eot?#iefix&v=2.019') format('embedded-opentype'), url('hack-bold-latin-webfont.woff2?v=2.019') format('woff2'), url('hack-bold-latin-webfont.woff?v=2.019') format('woff'), url('hack-bold-latin-webfont.ttf?v=2.019') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('hack-italic-latin-webfont.eot?v=2.019');
+  src: url('hack-italic-latin-webfont.eot?#iefix&v=2.019') format('embedded-opentype'), url('hack-italic-latin-webfont.woff2?v=2.019') format('woff2'), url('hack-italic-latin-webfont.woff?v=2.019') format('woff'), url('hack-italic-latin-webfont.ttf?v=2.019') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('hack-bolditalic-latin-webfont.eot?v=2.019');
+  src: url('hack-bolditalic-latin-webfont.eot?#iefix&v=2.019') format('embedded-opentype'), url('hack-bolditalic-latin-webfont.woff2?v=2.019') format('woff2'), url('hack-bolditalic-latin-webfont.woff?v=2.019') format('woff'), url('hack-bolditalic-latin-webfont.ttf?v=2.019') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}

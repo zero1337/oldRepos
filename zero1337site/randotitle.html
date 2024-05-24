@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="description" content="zero1337">
+
+<link href="main.css" rel="stylesheet">
+<link rel="stylesheet" href="hack.css">
+
+</head><body><header>
+<script src="title.js"></script>
+    <div><span id="zerotitle"></span>
+<nav style="text-align: center"><a href="index.html#linterm">Linux/Term</a>&nbsp&nbsp<a href="index.html#projects">Projects</a>&nbsp&nbsp<a href="index.html#rando">Random</a></nav>
+</div>
+    
+</header>
+
+
+
+<main>
+
+    <h1>Site Title Randomizer</h1>
+	<p>I wanted ASCII art for my title but couldn't choose which one to use so I decided on a randomizer(ish) javascript.</p>
+	
+<br><hr><br>
+<p>So I started by creating an array(Line 1) with <code>const titles = new Array ();</code> with each ASCII title in an 
+index (0-4). To keep the title from being a jumbled mess add <code>\n</code> for a new line. When using the 
+backslash <code>\</code> for the first title I had to add another backslash after each one. The backslash is an escape 
+character so adding one after each one was a simple fix. After creating the array of titles, I used a simple one line randomizer 
+with <code>var i = Math.floor(5*Math.random())</code> and then use i as the index for the array titles and tie it to 
+the zerotitle id tag <code>document.getElementById("zerotitle").innerHTML = document.write(titles[i]);</code>. I call 
+this tag in the HTML which you can view in the page source. The titles kept aligning to the left of the page. The 
+<code>text-align: center</code> property was not being inherited from the parent tag so I had to add the property 
+to the title class in the main CSS file.</p><br>
+<p>title.js</p>
+<blockquote><pre><code>
+const titles = new Array ();
+titles[0] = '&#60;a class="title" style="font-size: .60em" href="index.html"&#62;\n' +
+'&#60;pre&#62;\n' +
+' ________    _______   _______     ______    ____    _______   _______  _________  \n' +
+'("      "\\  /"     "| /"      \\   /    " \\  /  " \\  /" __   ) /" __   )("       "\\ \n' +
+' \\___/   :)(: ______)|:        | // ____  \\/__|| | (__/ _) ./(__/ _) ./ \\___/   :/ \n' +
+'   /  ___/  \\/    |  |_____/   )/  /    ) :)  |: |     /  //     /  //     /   //  \n' +
+'  //  \\__   // ___)_  //      /(: (____/ //  _\\  |  __ \\_ \\\\  __ \\_ \\\\   __\\  ./   \n' +
+' (:   / "\\ (:      "||:  __   \\ \\        /  /" \\_|\\(: \__) :\\(: \\__) :\\ (:  \\_/ \\  \n' +
+'  \\_______) \\_______)|__|  \\___) \\"_____/  (_______)\\_______) \\_______)  \\_______) \n' +
+'                                                                                   \n' +
+'\n' +
+'&#60;/pre&#62;\n' +
+'&#60;/a&#62;';
+
+titles[1] = '&#60;a class="title" style="font-size: .65em" href="index.html"&#62;\n' +
+'&#60;pre&#62;\n' +
+'\n' +
+'▒███████▒▓█████  ██▀███   ▒█████  \n' +
+'▒ ▒ ▒ ▄▀░▓█   ▀ ▓██ ▒ ██▒▒██▒  ██▒\n' +
+'░ ▒ ▄▀▒░ ▒███   ▓██ ░▄█ ▒▒██░  ██▒\n' +
+'  ▄▀▒   ░▒▓█  ▄ ▒██▀▀█▄  ▒██   ██░\n' +
+'▒███████▒░▒████▒░██▓ ▒██▒░ ████▓▒░\n' +
+'░▒▒ ▓░▒░▒░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░▒░▒░ \n' +
+'░░▒ ▒ ░ ▒ ░ ░  ░  ░▒ ░ ▒░  ░ ▒ ▒░ \n' +
+'░ ░ ░ ░ ░   ░     ░░   ░ ░ ░ ░ ▒  \n' +
+'  ░ ░       ░  ░   ░         ░ ░  \n' +
+'░                                 \n' +
+'&#60;/pre&#62;\n' +
+'&#60;/a&#62;';
+
+titles[2] = '&#60;a class="title" style="font-size: .65em" href="index.html"&#62;\n' +
+'&#60;pre&#62;\n' +
+'\n' +
+'\n' +
+'███████╗███████╗██████╗  ██████╗  ██╗██████╗ ██████╗ ███████╗\n' +
+'╚══███╔╝██╔════╝██╔══██╗██╔═══██╗███║╚════██╗╚════██╗╚════██║\n' +
+'  ███╔╝ █████╗  ██████╔╝██║   ██║╚██║ █████╔╝ █████╔╝    ██╔╝\n' +
+' ███╔╝  ██╔══╝  ██╔══██╗██║   ██║ ██║ ╚═══██╗ ╚═══██╗   ██╔╝ \n' +
+'███████╗███████╗██║  ██║╚██████╔╝ ██║██████╔╝██████╔╝   ██║  \n' +
+'╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═╝╚═════╝ ╚═════╝    ╚═╝  \n' +
+'                                                             \n' +
+'\n' +
+'&#60;/pre&#62;\n' +
+'&#60;/a&#62;';
+
+titles[3] = '&#60;a class="title" style="font-size: .47em" href="index.html"&#62;\n' +
+'&#60;pre&#62;\n' +
+'\n' +
+'\n' +
+' ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄     ▄▄▄▄      ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ \n' +
+'▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌  ▄█░░░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌\n' +
+' ▀▀▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▐░░▌▐░░▌     ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌\n' +
+'          ▐░▌▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌  ▀▀ ▐░░▌              ▐░▌          ▐░▌         ▐░▌ \n' +
+' ▄▄▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌     ▐░░▌     ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌        ▐░▌  \n' +
+'▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌     ▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌       ▐░▌   \n' +
+'▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░▌       ▐░▌     ▐░░▌     ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌      ▐░▌    \n' +
+'▐░▌          ▐░▌          ▐░▌     ▐░▌  ▐░▌       ▐░▌     ▐░░▌              ▐░▌          ▐░▌     ▐░▌     \n' +
+'▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌ ▄▄▄▄█░░█▄▄▄  ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌    ▐░▌      \n' +
+'▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌   ▐░▌       \n' +
+' ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀     ▀        \n' +
+'                                                                                                        \n' +
+'\n' +
+'\n' +
+'&#60;/pre&#62;\n' +
+'&#60;/a&#62;';
+
+titles[4] = '&#60;a class="title" style="font-size: .55em" href="index.html"&#62;\n' +
+'&#60;pre&#62;\n' +
+'\n' +
+'\n' +
+'::::::::: :::::::::: :::::::::   ::::::::    :::   ::::::::   ::::::::  ::::::::::: \n' +
+'     :+:  :+:        :+:    :+: :+:    :+: :+:+:  :+:    :+: :+:    :+: :+:     :+: \n' +
+'    +:+   +:+        +:+    +:+ +:+    +:+   +:+         +:+        +:+        +:+  \n' +
+'   +#+    +#++:++#   +#++:++#:  +#+    +:+   +#+      +#++:      +#++:        +#+   \n' +
+'  +#+     +#+        +#+    +#+ +#+    +#+   +#+         +#+        +#+      +#+    \n' +
+' #+#      #+#        #+#    #+# #+#    #+#   #+#  #+#    #+# #+#    #+#     #+#     \n' +
+'######### ########## ###    ###  ########  ####### ########   ########      ###     \n' +
+'\n' +
+'\n' +
+'&#60;/pre&#62;\n' +
+'&#60;/a&#62;';
+
+var i = Math.floor(5*Math.random())
+
+document.getElementById("zerotitle").innerHTML = document.write(titles[i]);
+
+</code></pre></blockquote>
+<br><br>
+<p></p>
+
+</main>
+
+<footer>
+    <span class="cursor">Z</span>
+ 
+    
+        
+    
+</footer>
+
+</body></html>

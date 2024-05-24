@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="description" content="zero1337">
+
+<link href="main.css" rel="stylesheet">
+<link rel="stylesheet" href="hack.css">
+
+</head><body><header>
+<script src="title.js"></script>
+    <div><span id="zerotitle"></span>
+<nav style="text-align: center"><a href="index.html#linterm">Linux/Term</a>&nbsp&nbsp<a href="index.html#projects">Projects</a>&nbsp&nbsp<a href="index.html#rando">Random</a></nav>
+</div>
+    
+</header>
+
+
+
+<main>
+
+    <h1>ytdlPS</h1>
+	<p>A project I fumbled my way through trying to run a script from an extension button on the Firefox toolbar.</p>
+	
+<br><hr><br>
+<p>manifest.json</p>
+<blockquote><pre><code>
+{
+  "manifest_version": 2,
+  "name": "ytdlPS",
+  "version": "1.0",
+
+  "description": "Copies current address to clipboard then runs the PS script",
+  "homepage_url": "https://github.com",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "clipboardWrite"
+  ],
+
+  "browser_action": {
+    "default_icon": {            
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    },
+    "default_title": "ytdlPS",
+    "default_popup": "popup/index.html"
+  },
+
+  "background": {
+    "scripts": [
+      "background/main.js"
+    ]
+  },
+
+  "commands": {
+    "copy-url": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U"
+      },
+      "description": "Copy the URL of your current tab"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/main.js"]
+    }
+  ]
+}
+</code></pre></blockquote>
+<br><br>
+<p>/popup/index.html</p>
+<blockquote><pre><code>
+&#60!DOCTYPE html&#62
+&#60html lang="en"&#62
+&#60head&#62
+  &#60meta charset="UTF-8"&#62
+  &#60meta name="viewport" content="width=device-width, initial-scale=1.0"&#62
+  &#60meta http-equiv="X-UA-Compatible" content="ie=edge"&#62
+  &#60title&#62Copying URL&#60/title&#62
+
+  &#60style&#62
+  body {
+    overflow: hidden;
+	}
+    * {
+      width: 120px;
+      height: 75px;
+    }
+  &#60/style&#62
+&#60/head&#62
+&#60body&#62
+  &#60style&#62
+  a:link {
+    color: white;
+    background-color: #04AA6D !important;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 6px 18px;
+	}
+  a:visited {
+    color: white;
+	}
+  a:hover {
+    background-color: #21976C !important;
+	}
+  &#60/style&#62
+  &#60h4>&#60a type="application/vnd.ms-excel" href="ytdlps.ps1"&#62Download&#60/a&#62&#60/h4&#62
+  &#60script src="main.js"&#62&#60/script&#62
+
+&#60/body&#62
+&#60/html&#62
+</code></pre></blockquote>
+
+</main>
+
+<!--
+<p></p>
+<pre><code>
+</code></pre>
+-->
+
+<footer>
+    <span class="cursor">Z</span>
+ 
+    
+        
+    
+</footer>
+
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="description" content="zero1337">
+
+<link href="main.css" rel="stylesheet">
+<link rel="stylesheet" href="hack.css">
+
+</head><body><header>
+<script src="title.js"></script>
+    <div><span id="zerotitle"></span>
+<nav style="text-align: center"><a href="index.html#linterm">Linux/Term</a>&nbsp&nbsp<a href="index.html#projects">Projects</a>&nbsp&nbsp<a href="index.html#rando">Random</a></nav>
+</div>
+    
+</header>
+
+
+
+<main>
+
+    <h1>Quick Tips</h1>
+	<p>A running list of quick tips for the terminal/shell scripting.</p>
+	
+<br><hr><br>
+<h3>Removing Character From File</h3>
+<p>This tip is useful when uploading files to the Linux terminal on JSLinux. For some reason when I uploaded a 
+certain text file it added <code>^M</code> on each blank line and some seemingly random locations. So I used cat and 
+tr to remove each instance of the characters. This can be done with:</p>
+<blockquote><code>cat -v filename | tr -d 'char' &#62; output.file</code></blockquote><br>
+The <code>-v</code> shows non-printing/control characters. The <code>-d</code> after the <code>tr</code> command delete the specified 
+character. The <code>&#62;</code> will take the output of the command(s) and write it to a file. 
+</p>
+<br><hr><br>
+<h3>Replacing Characters in a File</h3>
+<p>So when I was working on the title randomizer project I wanted to show the code on the webpage. To show HTML tags, for example (<code>&#60;html&#62;</code>) you have 
+to use the special HTML codes for them to show on the webpage. There are many ways replace text in a file such as python, perl, shell script, and terminal 
+commands. In the Linux terminal one easy way is to use sed:</p>
+<blockquote><code>sed 's/&#60;/\&amp;#60;/g; s/>/\&amp;#62;/g' title.js > title.txt</code></blockquote><br>
+Here the <code>s</code> is for substitute and the <code>g</code> is for global so the characters are replaced for every instance, not just the first one 
+found in the file. Because the <code>&amp;</code> is used by the terminal/shell you have to escape the character with a blackslash <code>\</code>. You 
+can do multiple replacements separated with a semicolon <code>;</code>.
+</p><br>
+<p>This can also be done in Windows with Powershell.
+<blockquote><code>(((Get-Content title.js -Raw) -replace '<','&amp;#60;') -replace '>','&amp;#62;') | Set-Content title.txt</code></blockquote><br>
+Powershell allows you to "nest" commands with the parenthesis. So we get the raw javascript file and replace the <code>&#60;</code> and the <code>></code> with 
+HTML codes, then pipe that output to <code>Set-Content</code> and write it to title.txt.
+</p>
+
+<br><br>
+<p></p>
+
+</main>
+
+<footer>
+    <span class="cursor">Z</span>
+ 
+    
+        
+    
+</footer>
+
+</body></html>
